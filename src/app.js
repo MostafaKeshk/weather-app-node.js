@@ -4,6 +4,8 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 const app = express();
+const port = process.env.PORT || 3000;
+
 
 app.set('view engine','hbs');
 app.set('views',path.join(__dirname,'../templates/views'))
@@ -72,6 +74,6 @@ res.render('404',{
 })
 })
 
-app.listen(3000,()=>{
-    console.log('live server on port 3000')
+app.listen(port,()=>{
+    console.log('live server on port ' + port)
 })

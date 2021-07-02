@@ -8,7 +8,7 @@ document.querySelector('form').addEventListener('submit',(e)=>{
     msg1.innerText ='loading...';
     msg2.innerText = '';
     let searchValue = document.querySelector('input').value;
-    fetch(`http://localhost:3000/weather?address=${searchValue}`).then((response)=>{
+    fetch(`/weather?address=${searchValue}`).then((response)=>{
     response.json().then(data=>{
         if(data.error){
             msg1.innerText = data.error;
